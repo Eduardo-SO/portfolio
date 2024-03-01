@@ -5,15 +5,6 @@ import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
 import { BackgroundGradient } from '@/components/ui/background-gradient'
-import {
-  AtomIcon,
-  BeefIcon,
-  CakeIcon,
-  CatIcon,
-  CogIcon,
-  DogIcon,
-  FuelIcon,
-} from 'lucide-react'
 import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 
 // const staggerMenuItems = stagger(0.1, { startDelay: 0.15 })
@@ -35,13 +26,20 @@ const heroVariants: Variants = {
 }
 
 const techs = [
-  { id: 1, tech: <AtomIcon /> },
-  { id: 2, tech: <DogIcon /> },
-  { id: 3, tech: <CogIcon /> },
-  { id: 4, tech: <BeefIcon /> },
-  { id: 5, tech: <CatIcon /> },
-  { id: 6, tech: <CakeIcon /> },
-  { id: 7, tech: <FuelIcon /> },
+  <Image key={1} width={48} height={48} alt="" src="/techs/chat-gpt.png" />,
+  <Image key={2} width={48} height={48} alt="" src="/techs/css.png" />,
+  <Image key={3} width={48} height={48} alt="" src="/techs/figma.png" />,
+  <Image key={4} width={48} height={48} alt="" src="/techs/framer.png" />,
+  <Image key={5} width={48} height={48} alt="" src="/techs/git.png" />,
+  <Image key={6} width={48} height={48} alt="" src="/techs/github.png" />,
+  <Image key={7} width={48} height={48} alt="" src="/techs/html.png" />,
+  <Image key={8} width={48} height={48} alt="" src="/techs/monday.png" />,
+  <Image key={9} width={48} height={48} alt="" src="/techs/next.png" />,
+  <Image key={10} width={48} height={48} alt="" src="/techs/react.png" />,
+  <Image key={11} width={48} height={48} alt="" src="/techs/shadcn.png" />,
+  <Image key={12} width={48} height={48} alt="" src="/techs/tailwind.png" />,
+  <Image key={13} width={48} height={48} alt="" src="/techs/typescript.png" />,
+  <Image key={14} width={48} height={48} alt="" src="/techs/zod.png" />,
 ]
 
 export default function Home() {

@@ -6,10 +6,7 @@ import React, { useEffect, useState } from 'react'
 import useMeasure from 'react-use-measure'
 
 interface InfiniteMovingCardsProps {
-  items: {
-    id: number
-    tech: JSX.Element
-  }[]
+  items: JSX.Element[]
   className?: string
 }
 
@@ -17,7 +14,7 @@ export const InfiniteMovingCards = ({
   items,
   className,
 }: InfiniteMovingCardsProps) => {
-  const fastDuration = 20
+  const fastDuration = 40
   const slowDuration = 80
 
   const [duration, setDuration] = useState(fastDuration)
@@ -68,7 +65,7 @@ export const InfiniteMovingCards = ({
         {[...items, ...items, ...items].map((item, idx) => (
           <motion.li
             key={idx}
-            className="max-w-full rounded-2xl p-2 hover:bg-red-700"
+            className="max-w-full overflow-hidden rounded-lg border border-slate-800 hover:border-slate-500"
             onHoverStart={() => {
               setMustFinish(true)
               setDuration(slowDuration)
@@ -78,7 +75,7 @@ export const InfiniteMovingCards = ({
               setDuration(fastDuration)
             }}
           >
-            {item.tech}
+            {item}
           </motion.li>
         ))}
       </motion.ul>
