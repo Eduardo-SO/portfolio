@@ -65,7 +65,8 @@ export const InfiniteMovingCards = ({
         {[...items, ...items, ...items].map((item, idx) => (
           <motion.li
             key={idx}
-            className="max-w-full overflow-hidden rounded-lg border border-slate-800 hover:border-slate-500"
+            className="max-w-full overflow-hidden rounded-lg"
+            whileHover={{ scale: 0.95 }}
             onHoverStart={() => {
               setMustFinish(true)
               setDuration(slowDuration)
