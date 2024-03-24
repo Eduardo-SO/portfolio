@@ -5,7 +5,7 @@ import { BackgroundGradient } from '@/components/ui/background-gradient'
 
 export function Header() {
   return (
-    <div className="fixed top-0 flex w-full items-center justify-center p-8">
+    <div className="fixed top-0 z-50 flex w-full items-center justify-center p-8">
       <div className="flex h-16 w-full max-w-7xl items-center justify-between rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md">
         <div className="flex items-center gap-3">
           <Image
