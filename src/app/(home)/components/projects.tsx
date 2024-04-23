@@ -11,6 +11,10 @@ interface ProjectCardProps {
   primaryBackgroundColor: string
 }
 
+interface ProjectsProps {
+  className?: string
+}
+
 function ProjectCard({
   title,
   description,
@@ -36,7 +40,13 @@ function ProjectCard({
             primaryBackgroundColor,
           )}
         >
-          <Image src={primaryBackground} alt="" width={300} height={300} />
+          <Image
+            src={primaryBackground}
+            alt=""
+            width={300}
+            height={300}
+            unoptimized
+          />
         </motion.div>
 
         <Image src={secondaryBackground} alt="" fill={true} />
@@ -50,9 +60,9 @@ function ProjectCard({
   )
 }
 
-export function Projects() {
+export function Projects({ className }: ProjectsProps) {
   return (
-    <div className="flex w-full flex-col items-center gap-12">
+    <div className={cn(className, 'flex w-full flex-col items-center gap-12')}>
       <div className="grid w-full max-w-7xl grid-cols-2 gap-4">
         <ProjectCard
           title="Be The Hero"

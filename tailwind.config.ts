@@ -80,6 +80,8 @@ const config = {
         scroll: 'scroll linear infinite',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'contact-radial-enter': 'contact-radial-enter 2s ease-out',
+        'contact-radial-leave': 'contact-radial-leave 2s ease-out',
       },
       transitionDuration: {
         '20s': '20s',

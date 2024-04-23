@@ -1,4 +1,9 @@
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+
+interface SkillsProps {
+  className?: string
+}
 
 const skillsContent = [
   {
@@ -33,11 +38,11 @@ const skillsContent = [
   },
 ]
 
-export function Skills() {
+export function Skills({ className }: SkillsProps) {
   return (
-    <div className="mt-10 grid w-full max-w-7xl grid-cols-2">
-      <div className="flex flex-col items-start gap-10">
-        <span className="rounded-full border border-slate-600 px-4 py-2 font-bold text-muted-foreground">
+    <div className={cn(className, 'grid h-min w-full max-w-7xl grid-cols-2')}>
+      <div className="sticky top-40 flex h-min flex-col items-start gap-10">
+        <span className="rounded-full  border border-slate-600 px-4 py-2 font-bold text-muted-foreground">
           Skills & Expertise
         </span>
         <span className="text-5xl font-bold leading-tight">
@@ -52,10 +57,9 @@ export function Skills() {
         {skillsContent.map((skill) => (
           <div
             key={skill.id}
-            className="flex gap-6 rounded-xl border border-slate-800 bg-gradient-to-t from-slate-900 to-black p-6"
+            className="sticky top-40 flex gap-6 rounded-xl border border-slate-800 bg-gradient-to-t from-slate-900 to-black p-6"
           >
             <span className="text-xl font-bold">0{skill.id}</span>
-
             <div className="flex flex-col gap-4">
               <span className="text-lg font-bold">{skill.title}</span>
               <p className="text-muted-foreground">{skill.content}</p>

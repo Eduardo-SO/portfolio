@@ -1,5 +1,5 @@
-import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 import Image from 'next/image'
+import { InfiniteMovingCards } from '@/components/ui/infinite-moving-cards'
 
 const techs = [
   <Image key={1} width={42} height={42} alt="" src="/techs/chat-gpt.png" />,

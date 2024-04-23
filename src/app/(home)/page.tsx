@@ -3,17 +3,19 @@
 import { Header } from '@/components/header'
 import { Hero } from './components/hero'
 import { Projects } from './components/projects'
-import { StickyScroll } from '@/components/ui/sticky-scroll'
 import { Skills } from './components/skills'
+import { Contact } from './components/contact'
+import { Footer } from './components/footer'
 
 export default function Home() {
   return (
-    <main className="sticky top-0 flex min-h-screen max-w-full flex-col items-center justify-between overflow-hidden bg-background">
+    <main className="flex flex-col items-center justify-between bg-background">
       <Header />
       <Hero />
       <Projects />
-      <StickyScroll />
-      <Skills />
+      <Skills className="my-32" />
+      <Contact />
+      <Footer />
     </main>
   )
 }

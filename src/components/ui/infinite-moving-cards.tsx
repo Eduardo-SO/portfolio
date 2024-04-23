@@ -14,8 +14,8 @@ export const InfiniteMovingCards = ({
   items,
   className,
 }: InfiniteMovingCardsProps) => {
-  const fastDuration = 40
-  const slowDuration = 80
+  const fastDuration = 60
+  const slowDuration = 120
 
   const [duration, setDuration] = useState(fastDuration)
   const [mustFinish, setMustFinish] = useState(false)
