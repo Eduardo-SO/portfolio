@@ -29,7 +29,9 @@ export function Hero() {
         variants={heroVariants}
         className="mb-4 flex items-center gap-2 rounded-full border border-muted px-3 py-1 text-sm"
       >
-        <div className="h-2 w-2 rounded-full bg-green-400 shadow-xl shadow-green-300" />
+        <div className="h-2 w-2 overflow-visible rounded-full bg-green-400 shadow-green-300">
+          <div className="z-10 h-2 w-2 animate-ping rounded-full bg-green-400 shadow-green-300" />
+        </div>
         Disponível para serviço
       </motion.div>
 

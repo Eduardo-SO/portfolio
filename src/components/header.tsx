@@ -16,6 +16,17 @@ export function Header() {
         'fixed z-50 flex h-16 w-full max-w-7xl items-center justify-between rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md',
       )}
       style={{ y: `${32 - contactProgression * 100}px` }}
+      initial={{
+        y: -120,
+        opacity: 0,
+      }}
+      animate={{
+        y: 32,
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+        },
+      }}
     >
       <div className="flex items-center gap-3">
         <Image

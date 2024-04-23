@@ -62,7 +62,21 @@ function ProjectCard({
 
 export function Projects({ className }: ProjectsProps) {
   return (
-    <div className={cn(className, 'flex w-full flex-col items-center gap-12')}>
+    <motion.div
+      className={cn(className, 'flex w-full flex-col items-center gap-12')}
+      initial={{
+        y: 120,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 1,
+          delay: 1.5,
+        },
+      }}
+    >
       <div className="grid w-full max-w-7xl grid-cols-2 gap-4">
         <ProjectCard
           title="Be The Hero"
@@ -82,6 +96,6 @@ export function Projects({ className }: ProjectsProps) {
       </div>
 
       <Button variant="secondary">Ver todos os projetos</Button>
-    </div>
+    </motion.div>
   )
 }
