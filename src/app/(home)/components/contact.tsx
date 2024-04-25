@@ -42,15 +42,17 @@ export function Contact() {
   return (
     <motion.div
       ref={contactSectionRef}
-      className="flex h-[80vh] w-full max-w-7xl flex-col items-center justify-center gap-8 rounded-xl border border-slate-800 px-6 py-28"
+      className="relative flex w-full max-w-7xl flex-col items-center justify-center gap-8 rounded-xl border border-slate-800 p-7 text-center lg:h-[80vh]"
       animate={{
         backgroundImage: isHovered
           ? 'radial-gradient(100% 100% at 50% 3.33067%, rgba(0, 0, 0, 0) 0%, rgb(0, 85, 196) 51.0417%, rgb(117, 165, 255) 100%)'
           : 'radial-gradient(34.6317% 25% at 50% 3.33067%, rgba(0, 0, 0, 0) 0%, rgba(79, 0, 196, 0) 51.0417%, rgba(172, 117, 255, 0) 100%)',
       }}
     >
-      <span className="text-5xl font-bold">Have a dream project?</span>
-      <span className="max-w-xl text-center text-muted-foreground">
+      <span className="text-4xl font-bold md:text-5xl">
+        Have a dream project?
+      </span>
+      <span className="max-w-xl text-muted-foreground">
         Let&apos;s transform your vision into stunning reality. Reach out today
         and start the journey to a remarkable brand presence.
       </span>
@@ -63,7 +65,7 @@ export function Contact() {
         <Button
           asChild
           variant="outline"
-          className="h-20 rounded-full border-transparent p-1 px-16 text-4xl font-semibold text-muted-foreground text-white hover:bg-white hover:text-black"
+          className="h-10 rounded-full border-transparent p-1 px-8 text-lg font-semibold text-muted-foreground text-white hover:bg-white hover:text-black sm:h-20 sm:px-16 sm:text-2xl md:text-3xl lg:text-4xl"
         >
           <motion.button
             onMouseEnter={handleMouseEnter}

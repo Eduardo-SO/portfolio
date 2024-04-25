@@ -37,7 +37,7 @@ export function Hero() {
 
       <motion.h1
         variants={heroVariants}
-        className="mb-8 py-4 text-center text-7xl font-bold tracking-tight md:text-7xl"
+        className="mb-8 py-4 text-center text-4xl font-bold tracking-tight md:text-7xl"
       >
         Olá, sou o Eduardo!
         <br />

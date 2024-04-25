@@ -27,12 +27,13 @@ export function Footer() {
   }, [])
 
   return (
-    <div className="grid w-full max-w-7xl grid-cols-3 items-center py-10 text-muted-foreground">
-      <span className="justify-self-start">
-        Desenvolvido por{' '}
+    <div className="flex w-full max-w-7xl flex-col items-center gap-4 py-10 text-center text-sm text-muted-foreground sm:grid sm:grid-cols-3">
+      <div className="flex items-baseline justify-self-start text-nowrap">
+        <div>Desenvolvido por </div>
+
         <HoverCard>
           <HoverCardTrigger asChild>
-            <Button className="p-0 text-white" variant="link">
+            <Button className="mx-1 p-0 text-white" variant="link">
               Eduardo Souza
             </Button>
           </HoverCardTrigger>
@@ -49,20 +50,19 @@ export function Footer() {
                 </p>
                 <div className="flex items-center pt-2">
                   <CalendarDays className="mr-2 h-4 w-4 opacity-70" />{' '}
-                  <span className="text-xs text-muted-foreground">
+                  <div className="text-xs text-muted-foreground">
                     Joined August 18, 2019
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
           </HoverCardContent>
-        </HoverCard>{' '}
-        | 2024
-      </span>
+        </HoverCard>
+      </div>
 
-      <span className="justify-self-center">{time}</span>
+      <div className="justify-self-center">{time}</div>
 
-      <span className="flex items-center gap-4 justify-self-end">
+      <div className="flex items-center gap-4 justify-self-end">
         <a
           href="https://github.com/Eduardo-SO"
           target="_blank"
@@ -78,7 +78,7 @@ export function Footer() {
         >
           <Linkedin />
         </a>
-      </span>
+      </div>
     </div>
   )
 }

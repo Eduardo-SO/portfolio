@@ -27,7 +27,7 @@ function ProjectCard({
       <motion.div
         className="absolute inset-0"
         initial={{ filter: 'brightness(30%)' }}
-        whileHover={{ scale: 1.02, filter: ' brightness(20%)' }}
+        whileHover={{ scale: 1.02, filter: 'brightness(20%)' }}
         transition={{
           ease: 'easeIn',
           duration: 0.4,
@@ -77,11 +77,11 @@ export function Projects({ className }: ProjectsProps) {
         },
       }}
     >
-      <div className="grid w-full max-w-7xl grid-cols-2 gap-4">
+      <div className="grid w-full max-w-7xl gap-4 md:grid-cols-2">
         <ProjectCard
           title="Be The Hero"
           description="App para adoção de animais em ONGs"
-          primaryBackgroundColor="bg-gradient-to-t from-red-950 via-red-700 to-red-500"
+          primaryBackgroundColor="bg-gradient-to-t from-black via-red-950 to-red-700"
           primaryBackground="/projects/bth-hero.svg"
           secondaryBackground="/projects/bth.gif"
         />
@@ -89,7 +89,7 @@ export function Projects({ className }: ProjectsProps) {
         <ProjectCard
           title="Ecoleta"
           description="App para gerenciar coleta de entulhos"
-          primaryBackgroundColor="bg-gradient-to-t from-emerald-900 via-emerald-700 to-emerald-500"
+          primaryBackgroundColor="bg-gradient-to-t from-black via-emerald-950 to-emerald-700"
           primaryBackground="/projects/ecoleta-hero.svg"
           secondaryBackground="/projects/ecoleta.gif"
         />

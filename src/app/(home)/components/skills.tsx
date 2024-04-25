@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { useInView, motion } from 'framer-motion'
+import { useRef } from 'react'
 
 interface SkillsProps {
   className?: string
@@ -39,21 +41,66 @@ const skillsContent = [
 ]
 
 export function Skills({ className }: SkillsProps) {
+  const ref = useRef(null)
+
+  const isInView = useInView(ref)
+
   return (
-    <div className={cn(className, 'grid h-min w-full max-w-7xl grid-cols-2')}>
-      <div className="sticky top-40 flex h-min flex-col items-start gap-10">
+    <div
+      ref={ref}
+      className={cn(
+        className,
+        'grid h-min w-full max-w-7xl grid-cols-1 sm:grid-cols-2',
+      )}
+    >
+      <motion.div
+        className="top-40 flex h-min flex-col items-start gap-10 sm:sticky"
+        initial={{
+          y: -120,
+          opacity: 0,
+        }}
+        animate={
+          isInView && {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1,
+            },
+          }
+        }
+      >
         <span className="rounded-full  border border-slate-600 px-4 py-2 font-bold text-muted-foreground">
           Skills & Expertise
         </span>
         <span className="text-5xl font-bold leading-tight">
           My Skills that Shine, Expertise You Can Trust
         </span>
-        <Button className="rounded-full" variant="secondary" size="lg">
+        <Button
+          className="hidden rounded-full sm:block"
+          variant="secondary"
+          size="lg"
+        >
           Mais sobre mim
         </Button>
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col gap-10">
+      <motion.div
+        className="flex flex-col gap-10"
+        initial={{
+          y: -120,
+          opacity: 0,
+        }}
+        animate={
+          isInView && {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 1,
+              delay: 0.5,
+            },
+          }
+        }
+      >
         {skillsContent.map((skill) => (
           <div
             key={skill.id}
@@ -66,7 +113,7 @@ export function Skills({ className }: SkillsProps) {
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   )
 }
