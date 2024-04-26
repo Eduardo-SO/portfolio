@@ -10,33 +10,33 @@ interface SkillsProps {
 const skillsContent = [
   {
     id: 1,
-    title: 'Lorem ipsum, dolor sit amet.',
+    title: 'Tecnologias Web',
     content:
-      'Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt',
+      'Sou apaixonado por explorar e implementar tecnologias web modernas que impulsionam a inovação e a eficiência. Com um olhar atento às tendências emergentes, me dedico a utilizar frameworks e ferramentas de ponta para criar experiências digitais avançadas e interativas.',
   },
   {
     id: 2,
-    title: 'Lorem ipsum, dolor sit amet.',
+    title: 'Design de UI/UX',
     content:
-      'Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt',
+      'Minha paixão é projetar interfaces de usuário e experiências de usuário que não apenas pareçam esteticamente agradáveis, mas que também sejam intuitivas e fáceis de usar. Priorizo a criação de soluções de design que atendam às necessidades dos usuários enquanto impulsionam a usabilidade e a satisfação.',
   },
   {
     id: 3,
-    title: 'Lorem ipsum, dolor sit amet.',
+    title: 'Design de Websites',
     content:
-      'Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt',
+      'Estou comprometido em criar designs de websites que capturam a essência de uma marca e engajam os visitantes. Combinando estética com funcionalidade, asseguro que cada site que desenvolvo seja responsivo, acessível e otimizado para uma ótima performance.',
   },
   {
     id: 4,
-    title: 'Lorem ipsum, dolor sit amet.',
+    title: 'Organização do Código',
     content:
-      'Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt',
+      'Acredito firmemente que uma base de código bem organizada é a chave para o desenvolvimento eficiente e a manutenção a longo prazo. Me esforço para escrever código limpo, documentado e modular, facilitando a colaboração e a escalabilidade dos projetos.',
   },
   {
     id: 5,
-    title: 'Lorem ipsum, dolor sit amet.',
+    title: 'Atenção aos Detalhes',
     content:
-      'Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt. Consectetur adipisicing elit. Illum, nesciunt',
+      'Detalhes fazem a diferença. É por isso que dedico uma atenção meticulosa a cada aspecto do processo de design e desenvolvimento. Desde a escolha da paleta de cores até a otimização do desempenho, cada detalhe é considerado para garantir a excelência do produto final.',
   },
 ]
 
@@ -104,7 +104,7 @@ export function Skills({ className }: SkillsProps) {
         {skillsContent.map((skill) => (
           <div
             key={skill.id}
-            className="sticky top-40 flex gap-6 rounded-xl border border-slate-800 bg-gradient-to-t from-slate-900 to-black p-6"
+            className="sticky top-40 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-t from-zinc-950 to-black p-6"
           >
             <span className="text-xl font-bold">0{skill.id}</span>
             <div className="flex flex-col gap-4">

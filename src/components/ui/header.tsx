@@ -16,7 +16,7 @@ export function Header() {
 
   return (
     <motion.div
-      className={cn('fixed z-50 w-full px-8')}
+      className={cn('fixed z-50 flex w-full justify-center px-8')}
       style={{ y: `${16 - contactProgression * 100}px` }}
     >
       <div className="flex h-16 w-full max-w-7xl items-center justify-between rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md">

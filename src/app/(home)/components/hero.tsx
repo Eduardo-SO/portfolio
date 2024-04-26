@@ -1,5 +1,4 @@
 import { motion, Variants } from 'framer-motion'
-import { TechsCarousel } from './techs-carousel'
 
 const heroVariants: Variants = {
   hidden: {
@@ -23,7 +22,7 @@ export function Hero() {
       variants={heroVariants}
       initial="hidden"
       animate="animate"
-      className="flex w-full max-w-7xl flex-col items-center justify-center py-48 pb-24 text-center"
+      className="flex w-full max-w-4xl flex-col items-center justify-center pb-20 pt-44 text-center"
     >
       <motion.div
         variants={heroVariants}
@@ -46,16 +45,12 @@ export function Hero() {
 
       <motion.h3
         variants={heroVariants}
-        className="mb-16 text-lg text-muted-foreground"
+        className="text-lg text-muted-foreground"
       >
-        Desenvolvedor front-end React disposto em aprender cada vez mais.
-        <br />
-        Criando experiências criativas e modernas!
+        Eduardo Souza é um desenvolvedor front-end React baseado no Brasil,
+        apaixonado por aprender e criar experiências digitais criativas e
+        modernas.
       </motion.h3>
-
-      <motion.div variants={heroVariants}>
-        <TechsCarousel />
-      </motion.div>
     </motion.div>
   )
 }

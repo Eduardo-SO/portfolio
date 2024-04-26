@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { FancyButton } from '@/components/ui/fancy-button'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -26,8 +27,8 @@ function ProjectCard({
     <div className="relative flex h-[300px] items-end overflow-hidden rounded-xl p-6">
       <motion.div
         className="absolute inset-0"
-        initial={{ filter: 'brightness(30%)' }}
-        whileHover={{ scale: 1.02, filter: 'brightness(20%)' }}
+        initial={{ filter: 'brightness(50%)' }}
+        whileHover={{ scale: 1.02, filter: 'brightness(30%)' }}
         transition={{
           ease: 'easeIn',
           duration: 0.4,
@@ -81,7 +82,7 @@ export function Projects({ className }: ProjectsProps) {
         <ProjectCard
           title="Be The Hero"
           description="App para adoção de animais em ONGs"
-          primaryBackgroundColor="bg-gradient-to-t from-black via-red-950 to-red-700"
+          primaryBackgroundColor="bg-red-500"
           primaryBackground="/projects/bth-hero.svg"
           secondaryBackground="/projects/bth.gif"
         />
@@ -89,13 +90,13 @@ export function Projects({ className }: ProjectsProps) {
         <ProjectCard
           title="Ecoleta"
           description="App para gerenciar coleta de entulhos"
-          primaryBackgroundColor="bg-gradient-to-t from-black via-emerald-950 to-emerald-700"
+          primaryBackgroundColor="bg-emerald-500"
           primaryBackground="/projects/ecoleta-hero.svg"
           secondaryBackground="/projects/ecoleta.gif"
         />
       </div>
 
-      <Button variant="secondary">Ver todos os projetos</Button>
+      <FancyButton>Ver todos os projetos</FancyButton>
     </motion.div>
   )
 }
