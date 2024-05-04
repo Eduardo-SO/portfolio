@@ -6,20 +6,18 @@ import { LayoutContext } from '@/contexts/layout-context'
 import { Button } from '@/components/ui/button'
 import { BackgroundGradient } from '@/components/ui/background-gradient'
 import { cn } from '@/lib/utils'
-
-// function DesktopHeader() {
-
-// }
+import { usePathname } from 'next/navigation'
 
 export function Header() {
   const { contactProgression } = useContext(LayoutContext)
+  const pathname = usePathname()
 
   return (
     <motion.div
       className={cn('fixed z-50 flex w-full justify-center px-8')}
       style={{ y: `${16 - contactProgression * 100}px` }}
     >
-      <div className="flex h-16 w-full max-w-7xl items-center justify-between rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md">
+      <div className="flex h-16 w-full max-w-8xl items-center justify-between rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md">
         <div className="flex items-center gap-3">
           <Image
             src="/perfil.jpg"
@@ -40,21 +38,30 @@ export function Header() {
         <div className="hidden items-center gap-4 sm:flex">
           <Button
             variant="ghost"
-            className="h-full text-base text-muted-foreground hover:bg-transparent"
+            className={cn(
+              'h-full text-base text-muted-foreground hover:bg-transparent',
+              pathname === '/' && 'text-foreground',
+            )}
           >
             Home
           </Button>
 
           <Button
             variant="ghost"
-            className="h-full text-base text-muted-foreground hover:bg-transparent"
+            className={cn(
+              'h-full text-base text-muted-foreground hover:bg-transparent',
+              pathname.includes('/projetos') && 'text-foreground',
+            )}
           >
             Projetos
           </Button>
 
           <Button
             variant="ghost"
-            className="h-full text-base text-muted-foreground hover:bg-transparent"
+            className={cn(
+              'h-full text-base text-muted-foreground hover:bg-transparent',
+              pathname.includes('/sobre') && 'text-foreground',
+            )}
           >
             Sobre mim
           </Button>
@@ -62,7 +69,10 @@ export function Header() {
           <BackgroundGradient containerClassName="p-[2px]">
             <Button
               variant="outline"
-              className="h-full border-transparent p-1 text-base text-muted-foreground"
+              className={cn(
+                'h-full text-base text-muted-foreground hover:bg-transparent',
+                pathname.includes('/contato') && 'text-foreground',
+              )}
             >
               Entre em contato
             </Button>

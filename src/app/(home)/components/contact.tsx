@@ -42,19 +42,20 @@ export function Contact() {
   return (
     <motion.div
       ref={contactSectionRef}
-      className="relative flex w-full max-w-7xl flex-col items-center justify-center gap-8 rounded-xl border border-slate-800 p-7 text-center lg:h-[80vh]"
+      className="relative flex w-full max-w-8xl flex-col items-center justify-center gap-8 rounded-xl border border-slate-800 p-7 text-center lg:h-[80vh]"
       animate={{
         backgroundImage: isHovered
-          ? 'radial-gradient(100% 100% at 50% 3.33067%, rgba(0, 0, 0, 0) 0%, rgb(0, 85, 196) 51.0417%, rgb(117, 165, 255) 100%)'
-          : 'radial-gradient(34.6317% 25% at 50% 3.33067%, rgba(0, 0, 0, 0) 0%, rgba(79, 0, 196, 0) 51.0417%, rgba(172, 117, 255, 0) 100%)',
+          ? 'radial-gradient(100% 100% at 50% 3.33067%, rgba(0,0,0,1) 0%, rgba(0,42,62,1) 50%, rgba(44,126,255,1) 100%)'
+          : 'radial-gradient(34.6317% 25% at 50% 3.33067%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 51.0417%, rgba(0, 0, 0, 1) 100%)',
       }}
     >
       <span className="text-4xl font-bold md:text-5xl">
-        Have a dream project?
+        Da Ideia à interface
       </span>
       <span className="max-w-xl text-muted-foreground">
-        Let&apos;s transform your vision into stunning reality. Reach out today
-        and start the journey to a remarkable brand presence.
+        Estou aqui para transformar visões em realidades impressionantes.
+        <br />
+        Vamos criar algo incrível juntos!
       </span>
 
       <BackgroundGradient

@@ -23,6 +23,9 @@ const config = {
       },
     },
     extend: {
+      maxWidth: {
+        '8xl': '85rem',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { FancyButton } from '@/components/ui/fancy-button'
 import { cn } from '@/lib/utils'
 import { useInView, motion } from 'framer-motion'
 import { useRef } from 'react'
@@ -50,7 +50,7 @@ export function Skills({ className }: SkillsProps) {
       ref={ref}
       className={cn(
         className,
-        'grid h-min w-full max-w-7xl grid-cols-1 sm:grid-cols-2',
+        'grid h-min w-full max-w-8xl grid-cols-1 sm:grid-cols-2',
       )}
     >
       <motion.div
@@ -69,19 +69,15 @@ export function Skills({ className }: SkillsProps) {
           }
         }
       >
-        <span className="rounded-full  border border-slate-600 px-4 py-2 font-bold text-muted-foreground">
-          Skills & Expertise
+        <span className="rounded-full border border-zinc-900 px-4 py-2 font-semibold text-muted-foreground">
+          Skills & Conhecimentos
         </span>
-        <span className="text-5xl font-bold leading-tight">
-          My Skills that Shine, Expertise You Can Trust
+        <span className="text-3xl font-bold leading-tight">
+          Habilidades que brilham
+          <br />
+          Conhecimentos em que você pode confiar
         </span>
-        <Button
-          className="hidden rounded-full sm:block"
-          variant="secondary"
-          size="lg"
-        >
-          Mais sobre mim
-        </Button>
+        <FancyButton>Mais sobre mim</FancyButton>
       </motion.div>
 
       <motion.div
