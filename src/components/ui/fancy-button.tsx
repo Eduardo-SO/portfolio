@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { Variants, motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
@@ -19,13 +20,16 @@ const arrow: Variants = {
   hover: { opacity: 1 },
 }
 
-export function FancyButton({ children }: FancyButtonProps) {
+export function FancyButton({ children, className }: FancyButtonProps) {
   return (
     <motion.button
       variants={button}
       initial="rest"
       whileHover="hover"
-      className="relative flex items-center justify-start gap-8 rounded-full border border-zinc-900 text-sm font-semibold text-transparent hover:text-white"
+      className={cn(
+        'relative flex items-center justify-start gap-8 rounded-full border border-zinc-900 text-sm font-semibold text-transparent hover:text-white',
+        className,
+      )}
     >
       <div className="whitespace-nowrap bg-gradient-to-r from-[#7b61ff] to-[#00ccb1] bg-clip-text">
         {children}

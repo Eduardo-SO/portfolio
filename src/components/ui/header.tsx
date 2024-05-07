@@ -1,5 +1,5 @@
-import { useContext } from 'react'
-import { motion } from 'framer-motion'
+import { useContext, useState } from 'react'
+import { Variants, motion } from 'framer-motion'
 import Image from 'next/image'
 
 import { LayoutContext } from '@/contexts/layout-context'
@@ -7,18 +7,216 @@ import { Button } from '@/components/ui/button'
 import { BackgroundGradient } from '@/components/ui/background-gradient'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
+import { Github, Linkedin, MenuIcon, XIcon } from 'lucide-react'
+import { Separator } from './separator'
 
-export function Header() {
-  const { contactProgression } = useContext(LayoutContext)
+const overlay: Variants = {
+  closed: {
+    padding: '0px 0px 0px 0px',
+    borderRadius: '0px',
+  },
+  opened: {
+    padding: '16px 16px 0px 16px',
+    borderRadius: '5px',
+    transition: {
+      duration: 0.3,
+    },
+  },
+}
+
+const container: Variants = {
+  closed: {
+    borderRadius: '0rem',
+    borderBottomWidth: '1px',
+    maxWidth: '85rem',
+    padding: '0.5rem',
+    transition: {
+      duration: 0.5,
+    },
+  },
+  opened: {
+    borderRadius: '1rem',
+    borderWidth: '1px',
+    maxWidth: '24rem',
+    padding: '2rem',
+    transition: {
+      duration: 0.5,
+    },
+  },
+}
+
+const header: Variants = {
+  closed: {},
+  opened: {},
+}
+
+const content: Variants = {
+  closed: {
+    height: '0px',
+    opacity: 0,
+    transition: { duration: 0.5 },
+  },
+  opened: {
+    height: 'auto',
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.6, duration: 0.5 },
+  },
+}
+
+const footer: Variants = {
+  closed: {
+    height: '0px',
+    opacity: 0,
+    transition: { duration: 0.5 },
+  },
+  opened: {
+    height: 'auto',
+    opacity: 1,
+    y: 0,
+    transition: { delay: 1, duration: 0.5 },
+  },
+}
+
+function MobileMenu() {
   const pathname = usePathname()
+
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <motion.div
-      className={cn('fixed z-50 flex w-full justify-center px-8')}
-      style={{ y: `${16 - contactProgression * 100}px` }}
+      variants={overlay}
+      initial={false}
+      animate={isOpen ? 'opened' : 'closed'}
+      className={cn('flex w-full items-center justify-end lg:hidden')}
     >
-      <div className="flex h-16 w-full max-w-8xl items-center justify-between rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md">
-        <div className="flex items-center gap-3">
+      <motion.div
+        layoutRoot
+        layout="position"
+        variants={container}
+        className={cn(
+          'flex w-full flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/40 backdrop-blur-md transition-[border]',
+        )}
+      >
+        <motion.div variants={header} className="flex w-full justify-between">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/perfil.jpg"
+              alt="Perfil image"
+              width={200}
+              height={200}
+              className="h-10 w-10 rounded-xl"
+            />
+
+            <div className="flex flex-col">
+              <strong className="text-sm font-bold">Eduardo Souza</strong>
+              <span className="text-xs text-muted-foreground">
+                Desenvolvedor React
+              </span>
+            </div>
+          </div>
+
+          <motion.button
+            className="mr-4 flex items-center justify-center gap-4 text-white"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <XIcon id="menu-trigger" />
+            ) : (
+              <MenuIcon id="menu-trigger" />
+            )}
+          </motion.button>
+        </motion.div>
+
+        <motion.div
+          variants={content}
+          initial={{ height: '0px', opacity: 0, y: 60 }}
+          exit={{ height: '0px', y: 0 }}
+          className="flex w-full flex-col items-start gap-4 overflow-hidden"
+        >
+          <Separator className="mt-6" />
+
+          <motion.div className="flex w-full flex-col items-start gap-4 overflow-hidden">
+            <Button
+              variant="ghost"
+              className={cn(
+                'h-full px-0 text-xl text-muted-foreground hover:bg-transparent',
+                pathname === '/' && 'text-foreground',
+              )}
+            >
+              Home
+            </Button>
+
+            <Button
+              variant="ghost"
+              className={cn(
+                'h-full px-0 text-xl text-muted-foreground hover:bg-transparent',
+                pathname.includes('/projetos') && 'text-foreground',
+              )}
+            >
+              Projetos
+            </Button>
+
+            <Button
+              variant="ghost"
+              className={cn(
+                'h-full px-0 text-xl text-muted-foreground hover:bg-transparent',
+                pathname.includes('/sobre') && 'text-foreground',
+              )}
+            >
+              Sobre mim
+            </Button>
+
+            <BackgroundGradient containerClassName="p-[2px] w-full">
+              <Button
+                variant="outline"
+                className={cn(
+                  'h-full w-full text-xl text-muted-foreground hover:bg-transparent',
+                  pathname.includes('/contato') && 'text-foreground',
+                )}
+              >
+                Entre em contato
+              </Button>
+            </BackgroundGradient>
+          </motion.div>
+
+          <Separator className="mt-4" />
+
+          <motion.div
+            variants={footer}
+            initial={{ opacity: 0, y: 20 }}
+            exit={{ height: '0px', y: 0 }}
+            className="mb-2 flex w-full items-center justify-center gap-6 text-muted-foreground"
+          >
+            <a
+              href="https://github.com/Eduardo-SO"
+              target="_blank"
+              className="hover:text-white"
+            >
+              <Github />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/eduardo-so"
+              target="_blank"
+              className="hover:text-white"
+            >
+              <Linkedin />
+            </a>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+function DesktopMenu() {
+  const pathname = usePathname()
+
+  return (
+    <div className="hidden w-full items-center justify-center px-4 lg:flex">
+      <div className="flex w-full max-w-8xl items-center justify-between overflow-hidden rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md transition-[border]">
+        <div className="flex w-full items-center gap-3">
           <Image
             src="/perfil.jpg"
             alt="Perfil image"
@@ -28,14 +226,14 @@ export function Header() {
           />
 
           <div className="flex flex-col">
-            <strong className="font-bold">Eduardo Souza</strong>
+            <strong className="text-sm font-bold">Eduardo Souza</strong>
             <span className="text-xs text-muted-foreground">
               Desenvolvedor React
             </span>
           </div>
         </div>
 
-        <div className="hidden items-center gap-4 sm:flex">
+        <div className="flex w-full items-center justify-end gap-4 overflow-hidden">
           <Button
             variant="ghost"
             className={cn(
@@ -79,6 +277,20 @@ export function Header() {
           </BackgroundGradient>
         </div>
       </div>
+    </div>
+  )
+}
+
+export function Header() {
+  const { contactProgression } = useContext(LayoutContext)
+
+  return (
+    <motion.div
+      className="fixed z-50 w-full lg:top-4"
+      style={{ y: `${-(contactProgression * 100)}px` }}
+    >
+      <MobileMenu />
+      <DesktopMenu />
     </motion.div>
   )
 }

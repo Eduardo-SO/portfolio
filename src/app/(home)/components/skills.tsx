@@ -50,11 +50,11 @@ export function Skills({ className }: SkillsProps) {
       ref={ref}
       className={cn(
         className,
-        'grid h-min w-full max-w-8xl grid-cols-1 sm:grid-cols-2',
+        'grid h-min w-full max-w-8xl grid-cols-1 md:grid-cols-2',
       )}
     >
       <motion.div
-        className="top-40 flex h-min flex-col items-start gap-10 sm:sticky"
+        className="sticky top-28 mb-8 flex h-min flex-col items-start gap-4 lg:top-40 lg:mb-0 lg:gap-10"
         initial={{
           y: -120,
           opacity: 0,
@@ -72,12 +72,13 @@ export function Skills({ className }: SkillsProps) {
         <span className="rounded-full border border-zinc-900 px-4 py-2 font-semibold text-muted-foreground">
           Skills & Conhecimentos
         </span>
-        <span className="text-3xl font-bold leading-tight">
+        <span className="text-xl font-bold leading-tight md:text-3xl">
           Habilidades que brilham
           <br />
           Conhecimentos em que você pode confiar
         </span>
-        <FancyButton>Mais sobre mim</FancyButton>
+
+        <FancyButton className="hidden md:block">Mais sobre mim</FancyButton>
       </motion.div>
 
       <motion.div
@@ -100,7 +101,7 @@ export function Skills({ className }: SkillsProps) {
         {skillsContent.map((skill) => (
           <div
             key={skill.id}
-            className="sticky top-40 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-t from-zinc-950 to-black p-6"
+            className="sticky top-64 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-t from-zinc-950 to-black p-6 md:top-40"
           >
             <span className="text-xl font-bold">0{skill.id}</span>
             <div className="flex flex-col gap-4">

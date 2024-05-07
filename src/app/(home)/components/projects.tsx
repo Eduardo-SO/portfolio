@@ -33,9 +33,7 @@ const imgContainer: Variants = {
 
 const text: Variants = {
   rest: { filter: 'opacity(1)' },
-  hover: {
-    filter: 'opacity(0)',
-  },
+  hover: { filter: 'opacity(0)' },
 }
 
 const button: Variants = {

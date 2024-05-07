@@ -10,7 +10,7 @@ import { Footer } from './components/footer'
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between bg-background px-8">
+    <main className="flex flex-col items-center justify-between bg-background px-4">
       <Header />
       <Hero />
       <Techs />
