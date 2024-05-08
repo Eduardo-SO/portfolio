@@ -53,7 +53,7 @@ export const InfiniteMovingCards = ({
   return (
     <div
       className={cn(
-        'w-[calc(100vw_-_32px)] overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+        'w-[calc(100vw_-_32px)] max-w-8xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
         className,
       )}
     >
