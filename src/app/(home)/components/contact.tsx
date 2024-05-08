@@ -45,7 +45,7 @@ export function Contact() {
       className="relative flex w-full max-w-8xl flex-col items-center justify-center gap-8 rounded-xl border border-slate-800 p-7 text-center lg:h-[80vh]"
       animate={{
         backgroundImage: isHovered
-          ? 'radial-gradient(100% 100% at 50% 3.33067%, rgba(0,0,0,1) 0%, rgba(0,42,62,1) 50%, rgba(44,126,255,1) 100%)'
+          ? 'radial-gradient(100% 100% at 50% 3.33067%, rgba(0,0,0,1) 0%, #281f53 50%, #005348 100%)'
           : 'radial-gradient(34.6317% 25% at 50% 3.33067%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 51.0417%, rgba(0, 0, 0, 1) 100%)',
       }}
     >
@@ -66,7 +66,7 @@ export function Contact() {
         <Button
           asChild
           variant="outline"
-          className="h-10 rounded-full border-transparent p-1 px-8 text-lg font-semibold text-muted-foreground text-white hover:bg-white hover:text-black sm:h-20 sm:px-16 sm:text-2xl md:text-3xl lg:text-4xl"
+          className="rounded-full border-none px-8 py-6 text-lg font-semibold text-muted-foreground text-white hover:bg-transparent sm:px-12 sm:py-8 sm:text-2xl md:text-3xl"
         >
           <motion.button
             onMouseEnter={handleMouseEnter}

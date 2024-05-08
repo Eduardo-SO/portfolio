@@ -28,7 +28,7 @@ const container: Variants = {
   closed: {
     borderRadius: '0rem',
     borderBottomWidth: '1px',
-    maxWidth: '85rem',
+    maxWidth: '64rem',
     padding: '10px 20px',
     transition: {
       duration: 0.3,
@@ -40,7 +40,7 @@ const container: Variants = {
     maxWidth: '24rem',
     padding: '30px 30px',
     transition: {
-      duration: 0.3,
+      duration: 0.6,
     },
   },
 }
@@ -95,8 +95,6 @@ function MobileMenu() {
       className={cn('flex w-full items-center justify-end lg:hidden')}
     >
       <motion.div
-        layoutRoot
-        layout="position"
         variants={container}
         className={cn(
           'flex w-full flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/40 backdrop-blur-md transition-[border]',
@@ -182,7 +180,7 @@ function MobileMenu() {
                 <Button
                   variant="outline"
                   className={cn(
-                    'h-full w-full text-xl text-muted-foreground hover:bg-transparent',
+                    'h-full w-full border-none text-xl text-muted-foreground hover:bg-transparent',
                     pathname.includes('/contato') && 'text-foreground',
                   )}
                 >
@@ -227,7 +225,7 @@ function DesktopMenu() {
 
   return (
     <div className="hidden w-full items-center justify-center px-4 lg:flex">
-      <div className="flex w-full max-w-8xl items-center justify-between overflow-hidden rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md transition-[border]">
+      <div className="flex w-full max-w-8xl items-center justify-between rounded-2xl border border-gray-800 bg-black/40 p-2 backdrop-blur-md">
         <div className="flex w-full items-center gap-3">
           <Image
             src="/perfil.jpg"
@@ -245,7 +243,7 @@ function DesktopMenu() {
           </div>
         </div>
 
-        <div className="flex w-full items-center justify-end gap-4 overflow-hidden">
+        <div className="flex w-full items-center justify-end gap-4">
           <Button
             variant="ghost"
             className={cn(
@@ -280,7 +278,7 @@ function DesktopMenu() {
             <Button
               variant="outline"
               className={cn(
-                'h-full text-base text-muted-foreground hover:bg-transparent',
+                'h-full border-none text-base text-muted-foreground hover:bg-transparent',
                 pathname.includes('/contato') && 'text-foreground',
               )}
             >

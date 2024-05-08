@@ -33,7 +33,7 @@ const mappedImages = techsUrls.map((techUrl, index) => (
 export function Techs() {
   return (
     <motion.div
-      className="mb-20"
+      className="mb-16"
       initial={{
         y: 120,
         opacity: 0,

@@ -50,11 +50,11 @@ export function Skills({ className }: SkillsProps) {
       ref={ref}
       className={cn(
         className,
-        'grid h-min w-full max-w-8xl grid-cols-1 md:grid-cols-2',
+        'grid h-min w-full max-w-8xl grid-cols-1 lg:grid-cols-2',
       )}
     >
       <motion.div
-        className="sticky top-28 mb-8 flex h-min flex-col items-start gap-4 lg:top-40 lg:mb-0 lg:gap-10"
+        className="top-24 mb-8 flex h-min flex-col items-start gap-12 lg:sticky lg:top-40 lg:mb-0 lg:gap-10"
         initial={{
           y: -120,
           opacity: 0,
@@ -64,21 +64,21 @@ export function Skills({ className }: SkillsProps) {
             y: 0,
             opacity: 1,
             transition: {
-              duration: 1,
+              duration: 0.5,
             },
           }
         }
       >
-        <span className="rounded-full border border-zinc-900 px-4 py-2 font-semibold text-muted-foreground">
+        <span className="self-center rounded-full border border-zinc-900 px-4 py-2 font-semibold text-muted-foreground lg:self-start">
           Skills & Conhecimentos
         </span>
-        <span className="text-xl font-bold leading-tight md:text-3xl">
+        <span className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
           Habilidades que brilham
           <br />
           Conhecimentos em que você pode confiar
         </span>
 
-        <FancyButton className="hidden md:block">Mais sobre mim</FancyButton>
+        <FancyButton className="hidden lg:block">Mais sobre mim</FancyButton>
       </motion.div>
 
       <motion.div
@@ -101,7 +101,7 @@ export function Skills({ className }: SkillsProps) {
         {skillsContent.map((skill) => (
           <div
             key={skill.id}
-            className="sticky top-64 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-t from-zinc-950 to-black p-6 md:top-40"
+            className="sticky top-24 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-t from-zinc-950/40 to-black/40 p-8 backdrop-blur-md lg:top-40"
           >
             <span className="text-xl font-bold">0{skill.id}</span>
             <div className="flex flex-col gap-4">

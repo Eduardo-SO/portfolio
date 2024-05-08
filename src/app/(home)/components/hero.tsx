@@ -23,7 +23,7 @@ export function Hero() {
         variants={heroVariants}
         initial="hidden"
         animate="animate"
-        className="flex w-full max-w-4xl flex-col items-center justify-center pb-20 pt-44 text-center"
+        className="mb-16 flex w-full max-w-4xl flex-col items-center justify-center pt-44 text-center"
       >
         <motion.div
           variants={heroVariants}
@@ -39,14 +39,13 @@ export function Hero() {
           variants={heroVariants}
           className="mb-8 py-4 text-center text-4xl font-bold tracking-tight md:text-7xl"
         >
-          Olá, sou o Eduardo!
-          <br />
-          Desenvolvedor React
+          <p>Olá, sou o Eduardo!</p>
+          <p>Desenvolvedor React</p>
         </motion.h1>
 
         <motion.h3
           variants={heroVariants}
-          className="text-lg text-muted-foreground"
+          className="text-muted-foreground lg:text-lg"
         >
           Eduardo Souza é um desenvolvedor front-end React, apaixonado por
           aprender e criar experiências digitais criativas e modernas.
