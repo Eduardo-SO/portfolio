@@ -29,18 +29,18 @@ const container: Variants = {
     borderRadius: '0rem',
     borderBottomWidth: '1px',
     maxWidth: '85rem',
-    padding: '0.5rem',
+    padding: '10px 20px',
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
   opened: {
     borderRadius: '1rem',
     borderWidth: '1px',
     maxWidth: '24rem',
-    padding: '2rem',
+    padding: '30px 30px',
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
 }
@@ -54,13 +54,17 @@ const content: Variants = {
   closed: {
     height: '0px',
     opacity: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.3 },
   },
   opened: {
     height: 'auto',
     opacity: 1,
     y: 0,
-    transition: { delay: 0.6, duration: 0.5 },
+    transition: {
+      duration: 0.3,
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
   },
 }
 
@@ -68,13 +72,13 @@ const footer: Variants = {
   closed: {
     height: '0px',
     opacity: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.3 },
   },
   opened: {
     height: 'auto',
     opacity: 1,
     y: 0,
-    transition: { delay: 1, duration: 0.5 },
+    transition: { delay: 0.5, duration: 0.3 },
   },
 }
 
@@ -117,7 +121,7 @@ function MobileMenu() {
           </div>
 
           <motion.button
-            className="mr-4 flex items-center justify-center gap-4 text-white"
+            className="flex items-center justify-center gap-4 text-white"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
@@ -130,54 +134,62 @@ function MobileMenu() {
 
         <motion.div
           variants={content}
-          initial={{ height: '0px', opacity: 0, y: 60 }}
+          initial={{ height: '0px', opacity: 0, y: 20 }}
           exit={{ height: '0px', y: 0 }}
-          className="flex w-full flex-col items-start gap-4 overflow-hidden"
+          className="flex w-full flex-col items-start gap-4"
         >
           <Separator className="mt-6" />
 
-          <motion.div className="flex w-full flex-col items-start gap-4 overflow-hidden">
-            <Button
-              variant="ghost"
-              className={cn(
-                'h-full px-0 text-xl text-muted-foreground hover:bg-transparent',
-                pathname === '/' && 'text-foreground',
-              )}
-            >
-              Home
-            </Button>
-
-            <Button
-              variant="ghost"
-              className={cn(
-                'h-full px-0 text-xl text-muted-foreground hover:bg-transparent',
-                pathname.includes('/projetos') && 'text-foreground',
-              )}
-            >
-              Projetos
-            </Button>
-
-            <Button
-              variant="ghost"
-              className={cn(
-                'h-full px-0 text-xl text-muted-foreground hover:bg-transparent',
-                pathname.includes('/sobre') && 'text-foreground',
-              )}
-            >
-              Sobre mim
-            </Button>
-
-            <BackgroundGradient containerClassName="p-[2px] w-full">
+          <motion.div className="flex w-full flex-col items-start gap-3">
+            <motion.span variants={content}>
               <Button
-                variant="outline"
+                variant="ghost"
                 className={cn(
-                  'h-full w-full text-xl text-muted-foreground hover:bg-transparent',
-                  pathname.includes('/contato') && 'text-foreground',
+                  'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  pathname === '/' && 'text-foreground',
                 )}
               >
-                Entre em contato
+                Home
               </Button>
-            </BackgroundGradient>
+            </motion.span>
+
+            <motion.span variants={content}>
+              <Button
+                variant="ghost"
+                className={cn(
+                  'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  pathname.includes('/projetos') && 'text-foreground',
+                )}
+              >
+                Projetos
+              </Button>
+            </motion.span>
+
+            <motion.span variants={content}>
+              <Button
+                variant="ghost"
+                className={cn(
+                  'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  pathname.includes('/sobre') && 'text-foreground',
+                )}
+              >
+                Sobre mim
+              </Button>
+            </motion.span>
+
+            <motion.span variants={content}>
+              <BackgroundGradient containerClassName="p-[2px] w-full">
+                <Button
+                  variant="outline"
+                  className={cn(
+                    'h-full w-full text-xl text-muted-foreground hover:bg-transparent',
+                    pathname.includes('/contato') && 'text-foreground',
+                  )}
+                >
+                  Entre em contato
+                </Button>
+              </BackgroundGradient>
+            </motion.span>
           </motion.div>
 
           <Separator className="mt-4" />
