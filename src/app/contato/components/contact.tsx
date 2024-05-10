@@ -32,10 +32,18 @@ export function Contact() {
     handleSetContactProgression(latest)
   })
 
+  const handleMouseEnter = () => {
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+  }
+
   return (
     <motion.div
       ref={contactSectionRef}
-      className="relative flex w-full max-w-8xl flex-col items-center justify-center gap-8 rounded-xl border border-slate-800 p-7 text-center lg:h-[80vh]"
+      className="relative mt-40 flex w-full max-w-8xl flex-col items-center justify-center gap-8 rounded-xl border border-slate-800 p-7 text-center lg:h-[80vh]"
       animate={{
         backgroundImage: isHovered
           ? 'radial-gradient(100% 100% at 50% 3.33067%, rgba(0,0,0,1) 0%, #281f53 50%, #005348 100%)'
@@ -63,8 +71,8 @@ export function Contact() {
             className="rounded-full border-none px-8 py-6 text-lg font-semibold text-muted-foreground text-white hover:bg-transparent sm:px-12 sm:py-8 sm:text-2xl md:text-3xl"
           >
             <motion.button
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               Entre em contato
             </motion.button>

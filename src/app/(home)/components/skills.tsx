@@ -101,7 +101,7 @@ export function Skills({ className }: SkillsProps) {
         {skillsContent.map((skill) => (
           <div
             key={skill.id}
-            className="sticky top-24 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-t from-zinc-950/40 to-black/40 p-8 backdrop-blur-md lg:top-40"
+            className="sticky top-24 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-b from-zinc-950/30 to-black p-8 backdrop-blur-md lg:top-40"
           >
             <span className="text-xl font-bold">0{skill.id}</span>
             <div className="flex flex-col gap-4">

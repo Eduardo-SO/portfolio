@@ -23,14 +23,14 @@ export function Hero() {
         variants={heroVariants}
         initial="hidden"
         animate="animate"
-        className="mb-16 flex w-full max-w-4xl flex-col items-center justify-center pt-44 text-center"
+        className="mb-16 flex w-full max-w-4xl flex-col items-center justify-center pt-36 text-center"
       >
         <motion.div
           variants={heroVariants}
           className="mb-4 flex items-center gap-2 rounded-full border border-muted px-3 py-1 text-sm"
         >
           <div className="h-2 w-2 overflow-visible rounded-full bg-green-400 shadow-green-300">
-            <div className="z-10 h-2 w-2 animate-ping rounded-full bg-green-400 shadow-green-300" />
+            <div className="h-2 w-2 animate-ping rounded-full bg-green-400 shadow-green-300" />
           </div>
           Disponível para serviço
         </motion.div>

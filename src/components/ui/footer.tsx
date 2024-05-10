@@ -1,7 +1,9 @@
+'use client'
+
 import { Github, Linkedin } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-export function Footer() {
+export default function Footer() {
   const [time, setTime] = useState('')
 
   useEffect(() => {

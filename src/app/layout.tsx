@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import LayoutProvider from '@/contexts/layout-context'
+import Transitions, { Animate } from '@/components/transitions'
+import Footer from '@/components/ui/footer'
+import Header from '@/components/ui/header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +22,16 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <title>Eduardo Souza</title>
-
       <LayoutProvider>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Transitions className="max-w-screen flex h-full flex-col overflow-hidden">
+            <Header />
+            <Animate className="flex-1">
+              {children}
+              <Footer />
+            </Animate>
+          </Transitions>
+        </body>
       </LayoutProvider>
     </html>
   )

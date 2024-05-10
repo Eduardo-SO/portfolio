@@ -1,14 +1,16 @@
-import { useContext, useState } from 'react'
-import { Variants, motion } from 'framer-motion'
-import Image from 'next/image'
+'use client'
 
-import { LayoutContext } from '@/contexts/layout-context'
-import { Button } from '@/components/ui/button'
-import { BackgroundGradient } from '@/components/ui/background-gradient'
-import { cn } from '@/lib/utils'
-import { usePathname } from 'next/navigation'
+import { useState } from 'react'
+import { Variants, motion } from 'framer-motion'
 import { Github, Linkedin, MenuIcon, XIcon } from 'lucide-react'
-import { Separator } from './separator'
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { BackgroundGradient } from '@/components/ui/background-gradient'
+import { Separator } from '@/components/ui/separator'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 const overlay: Variants = {
   closed: {
@@ -140,53 +142,61 @@ function MobileMenu() {
 
           <motion.div className="flex w-full flex-col items-start gap-3">
             <motion.span variants={content}>
-              <Button
-                variant="ghost"
-                className={cn(
-                  'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
-                  pathname === '/' && 'text-foreground',
-                )}
-              >
-                Home
-              </Button>
-            </motion.span>
-
-            <motion.span variants={content}>
-              <Button
-                variant="ghost"
-                className={cn(
-                  'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
-                  pathname.includes('/projetos') && 'text-foreground',
-                )}
-              >
-                Projetos
-              </Button>
-            </motion.span>
-
-            <motion.span variants={content}>
-              <Button
-                variant="ghost"
-                className={cn(
-                  'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
-                  pathname.includes('/sobre') && 'text-foreground',
-                )}
-              >
-                Sobre mim
-              </Button>
-            </motion.span>
-
-            <motion.span variants={content}>
-              <BackgroundGradient containerClassName="p-[2px] w-full">
+              <Link href="/">
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   className={cn(
-                    'h-full w-full border-none text-xl text-muted-foreground hover:bg-transparent',
-                    pathname.includes('/contato') && 'text-foreground',
+                    'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                    pathname === '/' && 'text-foreground',
                   )}
                 >
-                  Entre em contato
+                  Home
                 </Button>
-              </BackgroundGradient>
+              </Link>
+            </motion.span>
+
+            <motion.span variants={content}>
+              <Link href="#">
+                <Button
+                  variant="ghost"
+                  className={cn(
+                    'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                    pathname.includes('/projetos') && 'text-foreground',
+                  )}
+                >
+                  Projetos
+                </Button>
+              </Link>
+            </motion.span>
+
+            <motion.span variants={content}>
+              <Link href="#">
+                <Button
+                  variant="ghost"
+                  className={cn(
+                    'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                    pathname.includes('/sobre') && 'text-foreground',
+                  )}
+                >
+                  Sobre mim
+                </Button>
+              </Link>
+            </motion.span>
+
+            <motion.span variants={content}>
+              <Link href="/contato">
+                <BackgroundGradient containerClassName="p-[2px] w-full">
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      'h-full w-full border-none text-xl text-muted-foreground hover:bg-transparent',
+                      pathname.includes('/contato') && 'text-foreground',
+                    )}
+                  >
+                    Entre em contato
+                  </Button>
+                </BackgroundGradient>
+              </Link>
             </motion.span>
           </motion.div>
 
@@ -244,61 +254,64 @@ function DesktopMenu() {
         </div>
 
         <div className="flex w-full items-center justify-end gap-4">
-          <Button
-            variant="ghost"
-            className={cn(
-              'h-full text-base text-muted-foreground hover:bg-transparent',
-              pathname === '/' && 'text-foreground',
-            )}
-          >
-            Home
-          </Button>
-
-          <Button
-            variant="ghost"
-            className={cn(
-              'h-full text-base text-muted-foreground hover:bg-transparent',
-              pathname.includes('/projetos') && 'text-foreground',
-            )}
-          >
-            Projetos
-          </Button>
-
-          <Button
-            variant="ghost"
-            className={cn(
-              'h-full text-base text-muted-foreground hover:bg-transparent',
-              pathname.includes('/sobre') && 'text-foreground',
-            )}
-          >
-            Sobre mim
-          </Button>
-
-          <BackgroundGradient containerClassName="p-[2px]">
+          <Link href="/">
             <Button
-              variant="outline"
+              variant="ghost"
               className={cn(
-                'h-full border-none text-base text-muted-foreground hover:bg-transparent',
-                pathname.includes('/contato') && 'text-foreground',
+                'h-full text-base text-muted-foreground hover:bg-transparent',
+                pathname === '/' && 'text-foreground',
               )}
             >
-              Entre em contato
+              Home
             </Button>
-          </BackgroundGradient>
+          </Link>
+
+          <Link href="#">
+            <Button
+              variant="ghost"
+              className={cn(
+                'h-full text-base text-muted-foreground hover:bg-transparent',
+                pathname.includes('/projetos') && 'text-foreground',
+              )}
+            >
+              Projetos
+            </Button>
+          </Link>
+
+          <Link href="#">
+            <Button
+              variant="ghost"
+              className={cn(
+                'h-full text-base text-muted-foreground hover:bg-transparent',
+                pathname.includes('/sobre') && 'text-foreground',
+              )}
+            >
+              Sobre mim
+            </Button>
+          </Link>
+
+          <Link href="/contato">
+            <BackgroundGradient containerClassName="p-[2px]">
+              <Button
+                variant="outline"
+                className={cn(
+                  'h-full border-none text-base text-muted-foreground hover:bg-transparent',
+                  pathname.includes('/contato') && 'text-foreground',
+                )}
+              >
+                Entre em contato
+              </Button>
+            </BackgroundGradient>
+          </Link>
         </div>
       </div>
     </div>
   )
 }
 
-export function Header() {
-  const { contactProgression } = useContext(LayoutContext)
-
+export default function Header() {
   return (
-    <motion.div
-      className="fixed z-50 w-full lg:top-4"
-      style={{ y: `${-(contactProgression * 100)}px` }}
-    >
+    <motion.div className="fixed z-50 w-full lg:top-4">
       <MobileMenu />
       <DesktopMenu />
     </motion.div>
