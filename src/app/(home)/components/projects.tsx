@@ -9,7 +9,7 @@ interface ProjectCardProps {
   title: string
   description: string
   primaryBackground: string
-  secondaryBackground: string
+  secondaryBackground?: string
 }
 
 interface ProjectsProps {
@@ -19,10 +19,11 @@ interface ProjectsProps {
 const overlay: Variants = {
   rest: {
     filter: 'brightness(50%)',
+    scale: 1,
   },
   hover: {
     scale: 1.02,
-    filter: 'brightness(30%)',
+    filter: 'brightness(20%)',
   },
 }
 
@@ -45,7 +46,6 @@ const button: Variants = {
     padding: '8px 8px 8px 124px',
     transition: {
       delay: 0.1,
-      duration: 0.6,
     },
   },
 }
@@ -59,7 +59,6 @@ const arrow: Variants = {
     rotate: 0,
     transition: {
       delay: 0.2,
-      duration: 0.6,
     },
   },
 }
@@ -91,33 +90,33 @@ function ProjectCard({
           }}
         >
           <motion.div
-            variants={imgContainer}
+            variants={secondaryBackground ? imgContainer : {}}
             className={cn(
               'absolute z-10 flex h-full w-full items-end justify-center',
             )}
           >
-            <Image
-              src={primaryBackground}
-              alt=""
-              fill
-              className="from-black via-transparent to-transparent object-cover md:bg-gradient-to-t"
-              style={{ objectPosition: '50% 25%' }}
-              unoptimized
-            />
+            <div className="relative h-full w-full">
+              <Image
+                unoptimized
+                src={primaryBackground}
+                alt=""
+                fill
+                objectFit="cover"
+                className="bg-black object-[50%_25%]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-950/80" />
+            </div>
           </motion.div>
 
-          <Image
-            src={secondaryBackground}
-            className="object-cover"
-            alt=""
-            fill
-          />
+          {secondaryBackground && (
+            <Image src={secondaryBackground} objectFit="cover" alt="" fill />
+          )}
         </motion.div>
 
         <motion.div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <motion.button
             variants={button}
-            className="relative flex items-center justify-start gap-8 overflow-hidden rounded-full border border-zinc-900 bg-secondary font-semibold text-white"
+            className="relative flex items-center justify-start gap-8 overflow-hidden rounded-full bg-foreground/10 font-semibold text-white backdrop-blur-sm"
           >
             <motion.div
               variants={buttonText}
@@ -137,7 +136,7 @@ function ProjectCard({
 
         <motion.div className="z-20 hidden flex-col md:flex" variants={text}>
           <p className="text-xl font-semibold">{title}</p>
-          <p className="font-bold text-muted-foreground">{description}</p>
+          <p className="font-semibold text-muted-foreground">{description}</p>
         </motion.div>
       </motion.div>
     </div>
@@ -156,38 +155,38 @@ export function Projects({ className }: ProjectsProps) {
         y: 0,
         opacity: 1,
         transition: {
-          duration: 1,
-          delay: 1.5,
+          duration: 0.6,
+          delay: 0.5,
         },
       }}
     >
       <div className="grid w-full max-w-8xl gap-12 md:grid-cols-2 md:gap-4">
         <ProjectCard
           title="Be The Hero"
-          description="App para conectar doadores à ONGs"
+          description="Conectar doadores à ONGs"
           primaryBackground="/projects/bth-hero.webp"
           secondaryBackground="/projects/bth.gif"
         />
 
         <ProjectCard
           title="Ecoleta"
-          description="App para gerenciar coleta de entulhos"
+          description="Gerenciar coleta de entulhos"
           primaryBackground="/projects/ecoleta-hero.jpg"
           secondaryBackground="/projects/ecoleta.gif"
         />
 
         <ProjectCard
-          title="Ecoleta"
-          description="App para gerenciar coleta de entulhos"
-          primaryBackground="/projects/ecoleta-hero.jpg"
-          secondaryBackground="/projects/ecoleta.gif"
+          title="Proffy"
+          description="Conectar alunos e professores"
+          primaryBackground="/projects/proffy-hero.jpg"
+          // secondaryBackground="/projects/ecoleta.gif"
         />
 
         <ProjectCard
-          title="Be The Hero"
-          description="App para conectar doadores à ONGs"
-          primaryBackground="/projects/bth-hero.webp"
-          secondaryBackground="/projects/bth.gif"
+          title="GoBarber"
+          description="Agendamento de serviços de barbearia"
+          primaryBackground="/projects/gobarber-hero.jpg"
+          // secondaryBackground="/projects/bth.gif"
         />
       </div>
 

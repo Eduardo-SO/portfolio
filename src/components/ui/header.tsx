@@ -311,7 +311,20 @@ function DesktopMenu() {
 
 export default function Header() {
   return (
-    <motion.div className="fixed z-50 w-full lg:top-4">
+    <motion.div
+      initial={{
+        y: -120,
+        opacity: 0,
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.6,
+        },
+      }}
+      className="fixed z-50 w-full lg:top-4"
+    >
       <MobileMenu />
       <DesktopMenu />
     </motion.div>

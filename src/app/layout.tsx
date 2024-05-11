@@ -24,7 +24,7 @@ export default function RootLayout({
       <title>Eduardo Souza</title>
       <LayoutProvider>
         <body className={inter.className}>
-          <Transitions className="max-w-screen flex h-full flex-col overflow-hidden">
+          <Transitions className="max-w-screen relative flex h-screen flex-col">
             <Header />
             <Animate className="flex-1">
               {children}

@@ -64,7 +64,7 @@ export function Skills({ className }: SkillsProps) {
             y: 0,
             opacity: 1,
             transition: {
-              duration: 0.5,
+              duration: 0.6,
             },
           }
         }
@@ -92,8 +92,8 @@ export function Skills({ className }: SkillsProps) {
             y: 0,
             opacity: 1,
             transition: {
-              duration: 1,
-              delay: 0.5,
+              duration: 0.6,
+              delay: 0.2,
             },
           }
         }

@@ -42,8 +42,8 @@ export function Techs() {
         y: 0,
         opacity: 1,
         transition: {
-          duration: 1,
-          delay: 1.2,
+          duration: 0.6,
+          delay: 0.4,
         },
       }}
     >
