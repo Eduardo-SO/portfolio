@@ -53,7 +53,11 @@ export default function Transitions({ children, className }: Props) {
 
   const onClick: MouseEventHandler<HTMLDivElement> = (e) => {
     const a = (e.target as Element).closest('a')
+
     if (a) {
+      const target = a.getAttribute('target')
+      if (target) return
+
       e.preventDefault()
       const href = a.getAttribute('href')
       if (href) navigate(href)
