@@ -175,19 +175,23 @@ export function Projects({ className }: ProjectsProps) {
           secondaryBackground="/projects/ecoleta.gif"
         />
 
-        <ProjectCard
-          title="Proffy"
-          description="Conectar alunos e professores"
-          primaryBackground="/projects/proffy-hero.jpg"
-          // secondaryBackground="/projects/ecoleta.gif"
-        />
+        <div className="hidden md:block">
+          <ProjectCard
+            title="Proffy"
+            description="Conectar alunos e professores"
+            primaryBackground="/projects/proffy-hero.jpg"
+            // secondaryBackground="/projects/ecoleta.gif"
+          />
+        </div>
 
-        <ProjectCard
-          title="GoBarber"
-          description="Agendamento de serviços de barbearia"
-          primaryBackground="/projects/gobarber-hero.jpg"
-          // secondaryBackground="/projects/bth.gif"
-        />
+        <div className="hidden md:block">
+          <ProjectCard
+            title="GoBarber"
+            description="Agendamento de serviços de barbearia"
+            primaryBackground="/projects/gobarber-hero.jpg"
+            // secondaryBackground="/projects/bth.gif"
+          />
+        </div>
       </div>
 
       <FancyButton>Ver todos os projetos</FancyButton>
