@@ -12,75 +12,71 @@ import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
-const overlay: Variants = {
-  closed: {
-    padding: '0px 0px 0px 0px',
-    borderRadius: '0px',
-  },
-  opened: {
-    padding: '16px 16px 0px 16px',
-    borderRadius: '5px',
-    transition: {
-      duration: 0.3,
+const variants: Record<string, Variants> = {
+  overlay: {
+    closed: {
+      padding: '0px 0px 0px 0px',
+      borderRadius: '0px',
+    },
+    opened: {
+      padding: '16px 16px 0px 16px',
+      borderRadius: '5px',
+      transition: {
+        duration: 0.3,
+      },
     },
   },
-}
-
-const container: Variants = {
-  closed: {
-    borderRadius: '0rem',
-    borderBottomWidth: '1px',
-    width: '100%',
-    padding: '10px 20px',
-    transition: {
-      duration: 0.3,
+  container: {
+    closed: {
+      borderRadius: '0rem',
+      borderBottomWidth: '1px',
+      width: '100%',
+      padding: '10px 20px',
+      transition: {
+        duration: 0.3,
+      },
+    },
+    opened: {
+      borderRadius: '1rem',
+      borderWidth: '1px',
+      width: '40%',
+      padding: '30px 30px',
+      transition: {
+        duration: 0.6,
+      },
     },
   },
-  opened: {
-    borderRadius: '1rem',
-    borderWidth: '1px',
-    width: '40%',
-    padding: '30px 30px',
-    transition: {
-      duration: 0.6,
+  header: {
+    closed: {},
+    opened: {},
+  },
+  content: {
+    closed: {
+      height: '0px',
+      opacity: 0,
+      transition: { duration: 0.3 },
+    },
+    opened: {
+      height: 'auto',
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.3,
+        staggerChildren: 0.2,
+      },
     },
   },
-}
-
-const header: Variants = {
-  closed: {},
-  opened: {},
-}
-
-const content: Variants = {
-  closed: {
-    height: '0px',
-    opacity: 0,
-    transition: { duration: 0.3 },
-  },
-  opened: {
-    height: 'auto',
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
+  footer: {
+    closed: {
+      height: '0px',
+      opacity: 0,
     },
-  },
-}
-
-const footer: Variants = {
-  closed: {
-    height: '0px',
-    opacity: 0,
-    transition: { duration: 0.3 },
-  },
-  opened: {
-    height: 'auto',
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.5, duration: 0.3 },
+    opened: {
+      height: 'auto',
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.5, duration: 0.2 },
+    },
   },
 }
 
@@ -91,18 +87,21 @@ function MobileMenu() {
 
   return (
     <motion.div
-      variants={overlay}
+      variants={variants.overlay}
       initial={false}
       animate={isOpen ? 'opened' : 'closed'}
       className={cn('flex w-full items-center justify-end lg:hidden')}
     >
       <motion.div
-        variants={container}
+        variants={variants.container}
         className={cn(
           'flex min-w-72 flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/40 backdrop-blur-md transition-[border] sm:min-w-96',
         )}
       >
-        <motion.div variants={header} className="flex w-full justify-between">
+        <motion.div
+          variants={variants.header}
+          className="flex w-full justify-between"
+        >
           <div className="flex items-center gap-3">
             <Image
               src="/perfil.jpg"
@@ -133,7 +132,7 @@ function MobileMenu() {
         </motion.div>
 
         <motion.div
-          variants={content}
+          variants={variants.content}
           initial={{ height: '0px', opacity: 0, y: 20 }}
           exit={{ height: '0px', y: 0 }}
           className="flex w-full flex-col items-start gap-4"
@@ -141,7 +140,10 @@ function MobileMenu() {
           <Separator className="mt-6" />
 
           <motion.div className="flex w-full flex-col items-start gap-3">
-            <motion.span variants={content}>
+            <motion.span
+              variants={variants.content}
+              onClick={() => setIsOpen(false)}
+            >
               <Link href="/">
                 <Button
                   variant="ghost"
@@ -155,7 +157,10 @@ function MobileMenu() {
               </Link>
             </motion.span>
 
-            <motion.span variants={content}>
+            <motion.span
+              variants={variants.content}
+              onClick={() => setIsOpen(false)}
+            >
               <Link href="#">
                 <Button
                   variant="ghost"
@@ -169,7 +174,10 @@ function MobileMenu() {
               </Link>
             </motion.span>
 
-            <motion.span variants={content}>
+            <motion.span
+              variants={variants.content}
+              onClick={() => setIsOpen(false)}
+            >
               <Link href="#">
                 <Button
                   variant="ghost"
@@ -183,7 +191,11 @@ function MobileMenu() {
               </Link>
             </motion.span>
 
-            <motion.span variants={content} className="w-full">
+            <motion.span
+              variants={variants.content}
+              onClick={() => setIsOpen(false)}
+              className="w-full"
+            >
               <Link href="/contato" className="w-full">
                 <BackgroundGradient containerClassName="p-[2px] w-full">
                   <Button
@@ -203,7 +215,7 @@ function MobileMenu() {
           <Separator className="mt-4" />
 
           <motion.div
-            variants={footer}
+            variants={variants.footer}
             initial={{ opacity: 0, y: 20 }}
             exit={{ height: '0px', y: 0 }}
             className="mb-2 flex w-full items-center justify-center gap-6 text-muted-foreground"
