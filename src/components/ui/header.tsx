@@ -99,7 +99,7 @@ function MobileMenu() {
       <motion.div
         variants={container}
         className={cn(
-          'flex min-w-96 flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/40 backdrop-blur-md transition-[border]',
+          'flex min-w-72 flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/40 backdrop-blur-md transition-[border] sm:min-w-96',
         )}
       >
         <motion.div variants={header} className="flex w-full justify-between">
@@ -183,8 +183,8 @@ function MobileMenu() {
               </Link>
             </motion.span>
 
-            <motion.span variants={content}>
-              <Link href="/contato">
+            <motion.span variants={content} className="w-full">
+              <Link href="/contato" className="w-full">
                 <BackgroundGradient containerClassName="p-[2px] w-full">
                   <Button
                     variant="outline"

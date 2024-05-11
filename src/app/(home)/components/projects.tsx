@@ -97,19 +97,23 @@ function ProjectCard({
           >
             <div className="relative h-full w-full">
               <Image
-                unoptimized
                 src={primaryBackground}
                 alt=""
                 fill
-                objectFit="cover"
-                className="bg-black object-[50%_25%]"
+                className="bg-black object-cover object-[50%_25%]"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-zinc-950/80" />
             </div>
           </motion.div>
 
           {secondaryBackground && (
-            <Image src={secondaryBackground} objectFit="cover" alt="" fill />
+            <Image
+              unoptimized
+              src={secondaryBackground}
+              className="object-cover"
+              alt=""
+              fill
+            />
           )}
         </motion.div>
 
