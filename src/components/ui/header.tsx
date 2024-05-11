@@ -30,7 +30,7 @@ const container: Variants = {
   closed: {
     borderRadius: '0rem',
     borderBottomWidth: '1px',
-    maxWidth: '64rem',
+    width: '100%',
     padding: '10px 20px',
     transition: {
       duration: 0.3,
@@ -39,7 +39,7 @@ const container: Variants = {
   opened: {
     borderRadius: '1rem',
     borderWidth: '1px',
-    maxWidth: '24rem',
+    width: '40%',
     padding: '30px 30px',
     transition: {
       duration: 0.6,
@@ -99,7 +99,7 @@ function MobileMenu() {
       <motion.div
         variants={container}
         className={cn(
-          'flex w-full flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/40 backdrop-blur-md transition-[border]',
+          'flex min-w-96 flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/40 backdrop-blur-md transition-[border]',
         )}
       >
         <motion.div variants={header} className="flex w-full justify-between">
