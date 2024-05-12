@@ -1,7 +1,7 @@
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import {
   createContext,
   MouseEventHandler,
@@ -44,6 +44,8 @@ type Props = PropsWithChildren<{
 export default function Transitions({ children, className }: Props) {
   const [pending, start] = useTransition()
   const router = useRouter()
+  const pathname = usePathname()
+
   const navigate = (href: string) => {
     start(async () => {
       router.push(href)
@@ -58,8 +60,10 @@ export default function Transitions({ children, className }: Props) {
       const target = a.getAttribute('target')
       if (target) return
 
-      e.preventDefault()
       const href = a.getAttribute('href')
+      if (href === pathname) return
+
+      e.preventDefault()
       if (href) navigate(href)
     }
   }

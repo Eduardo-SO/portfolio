@@ -139,56 +139,53 @@ function MobileMenu() {
         >
           <Separator className="mt-6" />
 
-          <motion.div className="flex w-full flex-col items-start gap-3">
+          <motion.div className="flex w-full flex-col gap-3">
             <motion.span
               variants={variants.content}
               onClick={() => setIsOpen(false)}
             >
-              <Link href="/">
-                <Button
-                  variant="ghost"
-                  className={cn(
-                    'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
-                    pathname === '/' && 'text-foreground',
-                  )}
-                >
-                  Home
-                </Button>
-              </Link>
+              <Button
+                asChild
+                variant="ghost"
+                className={cn(
+                  'h-full w-full justify-start px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  pathname === '/' && 'text-foreground',
+                )}
+              >
+                <Link href="/">Home</Link>
+              </Button>
             </motion.span>
 
             <motion.span
               variants={variants.content}
               onClick={() => setIsOpen(false)}
             >
-              <Link href="/projetos">
-                <Button
-                  variant="ghost"
-                  className={cn(
-                    'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
-                    pathname.includes('/projetos') && 'text-foreground',
-                  )}
-                >
-                  Projetos
-                </Button>
-              </Link>
+              <Button
+                asChild
+                variant="ghost"
+                className={cn(
+                  'h-full w-full justify-start px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  pathname.includes('/projetos') && 'text-foreground',
+                )}
+              >
+                <Link href="/projetos">Projetos</Link>
+              </Button>
             </motion.span>
 
             <motion.span
               variants={variants.content}
               onClick={() => setIsOpen(false)}
             >
-              <Link href="/sobre">
-                <Button
-                  variant="ghost"
-                  className={cn(
-                    'h-full px-0 text-2xl text-muted-foreground hover:bg-transparent',
-                    pathname.includes('/sobre') && 'text-foreground',
-                  )}
-                >
-                  Sobre mim
-                </Button>
-              </Link>
+              <Button
+                asChild
+                variant="ghost"
+                className={cn(
+                  'h-full w-full justify-start px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  pathname.includes('/sobre') && 'text-foreground',
+                )}
+              >
+                <Link href="/sobre">Sobre mim</Link>
+              </Button>
             </motion.span>
 
             <motion.span
@@ -196,19 +193,20 @@ function MobileMenu() {
               onClick={() => setIsOpen(false)}
               className="w-full"
             >
-              <Link href="/contato" className="w-full">
-                <BackgroundGradient containerClassName="p-[2px] w-full">
-                  <Button
-                    variant="outline"
-                    className={cn(
-                      'h-full w-full border-none text-xl text-muted-foreground hover:bg-transparent',
-                      pathname.includes('/contato') && 'text-foreground',
-                    )}
-                  >
+              <BackgroundGradient containerClassName="p-[2px] w-full">
+                <Button
+                  asChild
+                  variant="outline"
+                  className={cn(
+                    'h-full w-full border-none text-xl text-muted-foreground hover:bg-transparent',
+                    pathname.includes('/contato') && 'text-foreground',
+                  )}
+                >
+                  <Link href="/contato" className="w-full">
                     Entre em contato
-                  </Button>
-                </BackgroundGradient>
-              </Link>
+                  </Link>
+                </Button>
+              </BackgroundGradient>
             </motion.span>
           </motion.div>
 
