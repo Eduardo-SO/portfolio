@@ -95,7 +95,7 @@ function MobileMenu() {
       <motion.div
         variants={variants.container}
         className={cn(
-          'flex min-w-72 flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/40 backdrop-blur-md transition-[border] sm:min-w-96',
+          'flex min-w-72 flex-col items-center justify-between overflow-hidden border-gray-800 bg-black/60 backdrop-blur-lg transition-[border] sm:min-w-96',
         )}
       >
         <motion.div
@@ -161,7 +161,7 @@ function MobileMenu() {
               variants={variants.content}
               onClick={() => setIsOpen(false)}
             >
-              <Link href="#">
+              <Link href="/projetos">
                 <Button
                   variant="ghost"
                   className={cn(
@@ -178,7 +178,7 @@ function MobileMenu() {
               variants={variants.content}
               onClick={() => setIsOpen(false)}
             >
-              <Link href="#">
+              <Link href="/sobre">
                 <Button
                   variant="ghost"
                   className={cn(
@@ -278,7 +278,7 @@ function DesktopMenu() {
             </Button>
           </Link>
 
-          <Link href="#">
+          <Link href="/projetos">
             <Button
               variant="ghost"
               className={cn(
@@ -290,7 +290,7 @@ function DesktopMenu() {
             </Button>
           </Link>
 
-          <Link href="#">
+          <Link href="/sobre">
             <Button
               variant="ghost"
               className={cn(

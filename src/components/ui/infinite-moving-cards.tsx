@@ -59,7 +59,7 @@ export const InfiniteMovingCards = ({
     >
       <motion.ul
         ref={ref}
-        className="flex w-max min-w-full shrink-0 flex-nowrap gap-20 py-4"
+        className="flex w-max min-w-full shrink-0 flex-nowrap gap-12 py-4 sm:gap-20"
         style={{ x: xTranslation }}
       >
         {[...items, ...items, ...items].map((item, idx) => (

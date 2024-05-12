@@ -22,7 +22,7 @@ export function Hero() {
         variants={heroVariants}
         initial="hidden"
         animate="animate"
-        className="mb-16 flex w-full max-w-4xl flex-col items-center justify-center pt-36 text-center"
+        className="mb-16 flex w-full max-w-4xl flex-col items-center justify-center text-center"
       >
         <motion.div
           variants={heroVariants}
