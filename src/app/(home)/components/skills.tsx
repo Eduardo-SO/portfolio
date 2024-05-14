@@ -50,7 +50,7 @@ export function Skills({ className }: SkillsProps) {
       ref={ref}
       className={cn(
         className,
-        'grid h-min w-full max-w-8xl grid-cols-1 lg:grid-cols-2',
+        'my-32 grid h-min w-full max-w-8xl grid-cols-1 lg:grid-cols-2',
       )}
     >
       <motion.div
@@ -78,7 +78,7 @@ export function Skills({ className }: SkillsProps) {
           Conhecimentos em que você pode confiar
         </span>
 
-        <FancyButton className="hidden lg:block">Mais sobre mim</FancyButton>
+        <FancyButton className="hidden lg:flex">Mais sobre mim</FancyButton>
       </motion.div>
 
       <motion.div

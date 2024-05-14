@@ -11,7 +11,7 @@ const button: Variants = {
   },
   hover: {
     padding: '12px 40px 12px 24px',
-    background: 'linear-gradient(to right, #7b61ff, #00ccb1)',
+    background: 'linear-gradient(to right, #ffffff, #c4c4d4)',
   },
 }
 
@@ -27,11 +27,11 @@ export function FancyButton({ children, className }: FancyButtonProps) {
       initial="rest"
       whileHover="hover"
       className={cn(
-        'relative flex items-center justify-start gap-8 rounded-full border border-zinc-900 text-sm font-semibold text-transparent hover:text-white',
+        'relative flex items-center justify-start gap-8 rounded-full border border-zinc-900 text-sm font-semibold text-transparent hover:text-black',
         className,
       )}
     >
-      <div className="whitespace-nowrap bg-gradient-to-r from-[#7b61ff] to-[#00ccb1] bg-clip-text">
+      <div className="whitespace-nowrap bg-gradient-to-r from-zinc-500 to-white bg-clip-text">
         {children}
       </div>
 

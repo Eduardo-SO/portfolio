@@ -45,7 +45,7 @@ export function Contact() {
   return (
     <motion.div
       ref={contactSectionRef}
-      className="relative mt-40 flex w-full max-w-8xl flex-col items-center justify-center gap-8 rounded-xl border border-slate-800 px-7 py-20 text-center"
+      className="relative mt-40 flex w-full max-w-8xl flex-col items-center justify-center gap-8 rounded-xl border border-zinc-800 px-7 py-20 text-center"
       animate={{
         backgroundImage: isHovered
           ? 'radial-gradient(100% 100% at 50% 3.33067%, rgba(0,0,0,1) 0%, #281f53 50%, #005348 100%)'

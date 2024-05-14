@@ -5,6 +5,7 @@ import { Techs } from './components/techs'
 import { Projects } from './components/projects'
 import { Skills } from './components/skills'
 import { Contact } from '@/components/ui/contact'
+import { FAQs } from './components/faqs'
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <Hero />
       <Techs />
       <Projects />
-      <Skills className="my-32" />
+      <Skills />
+      <FAQs />
       <Contact />
     </div>
   )
