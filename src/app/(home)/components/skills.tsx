@@ -54,7 +54,7 @@ export function Skills({ className }: SkillsProps) {
       )}
     >
       <motion.div
-        className="top-24 mb-8 flex h-min flex-col items-start gap-12 lg:sticky lg:top-40 lg:mb-0 lg:gap-10"
+        className="sticky top-24 mb-8 flex h-min flex-col items-start gap-6 lg:top-40 lg:mb-0 lg:gap-10"
         initial={{
           y: -120,
           opacity: 0,
@@ -69,7 +69,7 @@ export function Skills({ className }: SkillsProps) {
           }
         }
       >
-        <span className="self-center rounded-full border border-zinc-900 px-4 py-2 font-semibold text-muted-foreground lg:self-start">
+        <span className="self-center rounded-full border border-zinc-900 bg-background px-4 py-2 font-semibold text-muted-foreground lg:relative lg:self-start">
           Skills & Conhecimentos
         </span>
         <span className="text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
@@ -101,9 +101,11 @@ export function Skills({ className }: SkillsProps) {
         {skillsContent.map((skill) => (
           <div
             key={skill.id}
-            className="sticky top-24 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-b from-zinc-950/30 to-black p-8 backdrop-blur-md lg:top-40"
+            className="sticky top-72 flex gap-6 rounded-xl border border-zinc-900 bg-gradient-to-b from-zinc-950/30 to-black p-8 backdrop-blur-md sm:top-64 lg:top-40"
           >
-            <span className="text-xl font-bold">0{skill.id}</span>
+            <span className="hidden text-xl font-bold sm:flex">
+              0{skill.id}
+            </span>
             <div className="flex flex-col gap-4">
               <span className="text-lg font-bold">{skill.title}</span>
               <p className="text-muted-foreground">{skill.content}</p>

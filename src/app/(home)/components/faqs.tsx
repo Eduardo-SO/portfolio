@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { ExternalLink } from 'lucide-react'
 
 const faqsContent = [
   {
@@ -14,35 +15,36 @@ const faqsContent = [
   },
   {
     id: '2',
-    title: 'Quais tecnologias foram usadas para construir este site?',
-    description:
-      'As tecnologias utilizadas na construção deste site envolvem Typescript, NextJS 14, TailwindCSS, Shadcn e Framer Motion',
-  },
-  {
-    id: '3',
     title: 'Você trabalha sozinho ou em time?',
     description:
       'Sou capaz de trabalhar de forma eficaz tanto de forma independente quanto em equipe.',
   },
   {
-    id: '4',
+    id: '3',
     title: 'Você está disponível para contratação?',
     description:
-      'Atualmente estou à procura de novas oportunidades de contratação. Entre em contato comigo!',
+      'Atualmente estou à procura de novas oportunidades de contratação!',
+  },
+  {
+    id: '4',
+    title: 'Quais tecnologias foram usadas para construir este site?',
+    description:
+      'As tecnologias utilizadas na construção deste site envolvem Typescript, NextJS 14, TailwindCSS, ShadcnUI e Framer Motion.',
   },
   {
     id: '5',
     title: 'Posso usar o código deste site como referência?',
     description: (
-      <p>
+      <p className="">
         Claro, fique à vontade, o código da aplicação atualmente está{' '}
         <a
           href="https://github.com/Eduardo-SO/portfolio"
           target="_blank"
-          className="text-white underline"
+          className="inline-flex flex-wrap items-baseline gap-1 text-white underline"
         >
-          nesse repositório
+          nesse repositório <ExternalLink size={16} />
         </a>
+        .
       </p>
     ),
   },
@@ -50,8 +52,8 @@ const faqsContent = [
 
 export function FAQs() {
   return (
-    <div className="mb-16 flex w-full max-w-3xl flex-col items-center justify-center text-center">
-      <span className="mb-12 text-2xl font-bold leading-tight md:text-3xl lg:text-4xl">
+    <div className="mb-32 flex w-full max-w-3xl flex-col items-center justify-center text-center">
+      <span className="mb-12 text-3xl font-bold leading-tight lg:text-4xl">
         FAQs
       </span>
 

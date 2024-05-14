@@ -11,7 +11,7 @@ const button: Variants = {
   },
   hover: {
     padding: '12px 40px 12px 24px',
-    background: 'linear-gradient(to right, #ffffff, #c4c4d4)',
+    background: 'linear-gradient(to right, #ffffff, #ffffff)',
   },
 }
 
