@@ -27,7 +27,7 @@ export function FancyButton({ children, className }: FancyButtonProps) {
       initial="rest"
       whileHover="hover"
       className={cn(
-        'relative flex items-center justify-start gap-8 rounded-full border border-zinc-900 text-sm font-semibold text-transparent hover:text-black',
+        'relative flex items-center justify-start gap-8 rounded-full border border-secondary text-sm font-semibold text-transparent hover:text-black',
         className,
       )}
     >

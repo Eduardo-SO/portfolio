@@ -22,7 +22,7 @@ export default function Footer() {
   }, [])
 
   return (
-    <div className="flex w-full max-w-8xl flex-col items-center gap-4 py-10 text-center text-sm text-muted-foreground sm:grid sm:grid-cols-3">
+    <div className="mx-auto flex max-w-8xl flex-col items-center gap-4 px-4 py-10 text-center text-sm text-muted-foreground sm:grid sm:grid-cols-3 2xl:px-0">
       <div className="flex items-baseline justify-self-start text-nowrap">
         <div>
           Desenvolvido por <span className="text-white">Eduardo Souza</span>
