@@ -31,7 +31,7 @@ export function Hero() {
           <div className="h-2 w-2 overflow-visible rounded-full bg-green-400 shadow-green-300">
             <div className="h-2 w-2 animate-ping rounded-full bg-green-400 shadow-green-300" />
           </div>
-          Disponível para serviço
+          Avaliando novas oportunidades
         </motion.div>
 
         <motion.h1
