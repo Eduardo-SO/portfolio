@@ -148,7 +148,7 @@ function MobileMenu() {
                 asChild
                 variant="ghost"
                 className={cn(
-                  'h-full w-full justify-start px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  'h-full w-full justify-start px-0 text-lg text-muted-foreground hover:bg-transparent',
                   pathname === '/' && 'text-foreground',
                 )}
               >
@@ -164,7 +164,7 @@ function MobileMenu() {
                 asChild
                 variant="ghost"
                 className={cn(
-                  'h-full w-full justify-start px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  'h-full w-full justify-start px-0 text-lg text-muted-foreground hover:bg-transparent',
                   pathname.includes('/projetos') && 'text-foreground',
                 )}
               >
@@ -180,7 +180,7 @@ function MobileMenu() {
                 asChild
                 variant="ghost"
                 className={cn(
-                  'h-full w-full justify-start px-0 text-2xl text-muted-foreground hover:bg-transparent',
+                  'h-full w-full justify-start px-0 text-lg text-muted-foreground hover:bg-transparent',
                   pathname.includes('/sobre') && 'text-foreground',
                 )}
               >
@@ -191,7 +191,7 @@ function MobileMenu() {
             <motion.span
               variants={variants.content}
               onClick={() => setIsOpen(false)}
-              className="w-full"
+              className="w-full pt-2"
             >
               <BackgroundGradient containerClassName="p-[2px] w-full">
                 <Button
