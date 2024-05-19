@@ -10,33 +10,33 @@ interface SkillsProps {
 const skillsContent = [
   {
     id: 1,
-    title: 'Tecnologias Web',
+    title: 'Tecnologias Web Modernas',
     content:
-      'Sou apaixonado por explorar e implementar tecnologias web modernas que impulsionam a inovação e a eficiência. Com um olhar atento às tendências emergentes, me dedico a utilizar frameworks e ferramentas de ponta para criar experiências digitais avançadas e interativas.',
+      'Sou fascinado por explorar e implementar tecnologias web modernas que impulsionam a inovação e a eficiência. Com mais de seis anos de experiência, utilizo frameworks e ferramentas de ponta como Next.js, Tailwind CSS e TypeScript para criar experiências digitais avançadas e interativas.',
   },
   {
     id: 2,
-    title: 'Design de UI/UX',
+    title: 'Design de Websites',
     content:
-      'Minha paixão é projetar interfaces de usuário e experiências de usuário que não apenas pareçam esteticamente agradáveis, mas que também sejam intuitivas e fáceis de usar. Priorizo a criação de soluções de design que atendam às necessidades dos usuários enquanto impulsionam a usabilidade e a satisfação.',
+      'Estou comprometido em criar designs de websites que capturam a essência de uma marca e engajam os visitantes. Combinando estética com funcionalidade, cada site que desenvolvo é responsivo, acessível e otimizado para uma ótima performance.',
   },
   {
     id: 3,
-    title: 'Design de Websites',
+    title: 'Organização do Código',
     content:
-      'Estou comprometido em criar designs de websites que capturam a essência de uma marca e engajam os visitantes. Combinando estética com funcionalidade, asseguro que cada site que desenvolvo seja responsivo, acessível e otimizado para uma ótima performance.',
+      'Acredito firmemente que uma base de código bem organizada é a chave para o desenvolvimento eficiente e a manutenção a longo prazo. Me esforço para escrever código limpo, facilitando a colaboração e a escalabilidade dos projetos.',
   },
   {
     id: 4,
-    title: 'Organização do Código',
+    title: 'Atenção aos Detalhes',
     content:
-      'Acredito firmemente que uma base de código bem organizada é a chave para o desenvolvimento eficiente e a manutenção a longo prazo. Me esforço para escrever código limpo, documentado e modular, facilitando a colaboração e a escalabilidade dos projetos.',
+      'Detalhes fazem a diferença. É por isso que dedico uma atenção meticulosa a cada aspecto do processo de design e desenvolvimento. Desde a escolha de ícones até a otimização do desempenho, cada detalhe é considerado para garantir a excelência do produto final.',
   },
   {
     id: 5,
-    title: 'Atenção aos Detalhes',
+    title: 'Aprimoramento Contínuo e Melhores Práticas',
     content:
-      'Detalhes fazem a diferença. É por isso que dedico uma atenção meticulosa a cada aspecto do processo de design e desenvolvimento. Desde a escolha da paleta de cores até a otimização do desempenho, cada detalhe é considerado para garantir a excelência do produto final.',
+      'Minha busca constante por inovação e conhecimento me mantém atualizado com as últimas tendências e avanços no desenvolvimento web. Adoto as melhores práticas para garantir que minhas soluções sejam eficientes, seguras e alinhadas com os padrões do setor, promovendo melhorias contínuas nos projetos.',
   },
 ]
 

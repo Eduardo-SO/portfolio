@@ -39,6 +39,7 @@ const variants: Record<string, Variants> = {
       padding: '8px 8px 8px 124px',
       transition: {
         delay: 0.1,
+        bounce: 0,
       },
     },
   },
@@ -127,10 +128,10 @@ export function ProjectCard({
               </motion.div>
 
               <motion.div
-                className="inline-block rounded-full bg-[#7b61ff] p-2"
+                className="inline-block rounded-full bg-secondary-foreground p-2 text-secondary"
                 variants={variants.arrow}
               >
-                <ArrowRight size={24} className="text-white" />
+                <ArrowRight size={24} />
               </motion.div>
             </motion.button>
           </motion.div>
