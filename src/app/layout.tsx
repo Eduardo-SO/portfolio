@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
+
 import LayoutProvider from '@/contexts/layout-context'
 import Transitions, { Animate } from '@/components/transitions'
 import Footer from '@/components/ui/footer'
@@ -34,6 +36,8 @@ export default function RootLayout({
 
             <Toaster />
           </Transitions>
+
+          <Analytics />
         </body>
       </LayoutProvider>
     </html>
